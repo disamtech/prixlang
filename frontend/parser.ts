@@ -1,4 +1,4 @@
-import { Stmt, Program, Expr, BinaryExpr, NumericLiteral, Identifier } from "./ast.ts";
+import { Stmt, Program, Expr, Identifier, NumericLiteral } from "./ast.ts";
 import { tokenize, Token, TokenType } from "./lexer.ts";
 
 export default class Parser {
@@ -6,6 +6,15 @@ export default class Parser {
 
     private not_eof(): boolean {
         return this.tokens[0].type != TokenType.EOF;
+    }
+
+    private at() {
+        return this.tokens[0] as Token;
+    }
+
+    private eat() {
+        const prev = this.tokens.shift() as Token;
+        return prev;
     }
 
     public produceAST (sourceCode: string): Program {
@@ -35,9 +44,12 @@ export default class Parser {
 
         switch (tk) {
             case TokenType.Identifier:
-                return { kind: "Identifier", symbol: this.at().value } as Identifier;
+                return { kind: "Identifier", symbol: this.eat().value } as Identifier;
+            case TokenType.Number:
+                return { kind: "NumericLiteral", value: parseFloat(this.eat().value) } as NumericLiteral;
             default:
-                return {} as Stmt;
+                console.error('Unexpected token found during parsing!', this.at())
+                Deno.exit(1);
         }
     }
 }
