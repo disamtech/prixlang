@@ -43,3 +43,8 @@ METHODS:
 
 **Basic concepts**
 
+## TODO
+[ ] Finish the beta version
+[ ] Prix.json to set environment variables
+[ ] Prix in Node.js
+
