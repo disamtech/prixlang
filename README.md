@@ -32,10 +32,14 @@ First, you need to install *Deno*.
 To test if you have Deno installed go to the terminal and run `deno --version` | To upgrade Deno run `deno upgrade`
 
 ## Basics
-**Environment variables**
+**Environment variables**.
+
 If you want to use environment variables in Prix you need to go to /core/runtime/environment.ts and go to env.declareVar() and change it
-*Posibilities:* At the moment you can make environment variables with boolean, number and null (not string). 
+*Posibilities:* At the moment you can make environment variables with boolean, number and null (not string). Soon you will be available to use prix.json to make environment variables.
 METHODS: 
 > `MK_NULL()`
 > `MK_NUMBER(number)`
 > `MK_BOOL(true/false)`
+
+**Basic concepts**
+
