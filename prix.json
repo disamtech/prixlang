@@ -1,0 +1,16 @@
+{
+    "generalConfig": {
+        "mainFile": "main.prix"
+    },
+    "env": {
+        "keys": [
+            {
+                "key": "hi",
+                "value": "123",
+                "identifier": "number"
+            }
+        ],
+        "_comment": "Note: The ENV keys doesn't take effect on the code until now, in the next update will be available to use.",
+        "_comment2": "To use ENV go to /core/runtime/environmets.ts and in the setupScope function change it in: env.declareVar()"
+    }
+}

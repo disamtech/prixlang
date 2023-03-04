@@ -1,1 +1,7 @@
-let x = 45 * (4+4)
+const obj = {
+    xa: 100,
+    yaa: 32,
+    eee: {
+        e: true,
+    }
+};
